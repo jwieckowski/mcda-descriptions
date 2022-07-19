@@ -1,0 +1,75 @@
+In Evaluation based on Distance from Average Solution method, the Positive Distance from Average solution (PDA) and Negative Distance from Average solution (NDA) solutions are calculated to obtain the alternative preference value \cite{rashid2021hybrid}. The optimal alternative has the higher distance from the worst solution and lowest distance from the ideal solution \cite{kundakci2019integrated}. Its advantage is that it needs fewer calculations to obtain the results \cite{torkayesh2020entropy}. EDAS is designed to evaluate decision alternatives according to the following steps:
+
+\noindent \textbf{Step 1.} Define a decision matrix of dimension $n \times m$, where $n$ is the number of alternatives, and $m$ is the number of criteria (\ref{eq:e1}).
+
+\begin{equation}
+X_{i j}=\left[\begin{array}{llll}
+x_{11} & x_{12} & \ldots & x_{1 m} \\
+x_{21} & x_{22} & \ldots & x_{2 m} \\
+\ldots & \ldots & \ldots & \ldots \\
+x_{n 1} & x_{n 2} & \ldots & x_{n m}
+\end{array}\right]
+\label{eq:e1}
+\end{equation}
+
+\noindent \textbf{Step 2.} Calculate the average solution for each criterion according to the formula (\ref{eq:e2}).
+
+\begin{equation}
+A V_{j}=\frac{\sum_{i=1}^{n} X_{i j}}{n}
+\label{eq:e2}
+\end{equation}
+
+\noindent \textbf{Step 3.} Calculating the positive distance from the mean solution and the negative distance from the mean solution for the alternatives. When the criterion is of profit type, the negative distance and the positive distance are calculated using equations (\ref{eq:e3}) and (\ref{eq:e4}), while when the criterion is of cost type, the distances are calculated using formulas (\ref{eq:e5}) and (\ref{eq:e6}).
+
+\begin{equation}
+NDA_{i j}=\frac{\max \left(0,\left(A V_{j}-X_{i j}\right)\right)}{A V_{j}}
+\label{eq:e3}
+\end{equation}
+
+\begin{equation}
+PDA_{i j} = \frac{\max \left(0,\left(X_{i j}-A V_{j}\right)\right)}{A V_{j}}
+\label{eq:e4}
+\end{equation}
+
+\begin{equation}
+N D A_{i j}=\frac{\max \left(0,\left(X_{i j}-A V_{j}\right)\right)}{A V_{j}}
+\label{eq:e5}
+\end{equation}
+
+\begin{equation}
+P D A_{i j}=\frac{\max \left(0,\left(A V_{j}-X_{i j}\right)\right)}{A V_{j}}
+\label{eq:e6}
+\end{equation}
+
+
+\noindent \textbf{Step 4.} Calculate the weighted sums of $PDA$ and $NDA$ for each decision variant using equations (\ref{eq:e7}) and (\ref{eq:e8}).
+
+\begin{equation}
+\mathrm{A} SP_{i}=\sum_{j=1}^{m} w_{j} P D A_{i j}
+\label{eq:e7}
+\end{equation}
+
+\begin{equation}
+SN_{i}=\sum_{j=1}^{m} w_{j} N D A_{i j}
+\label{eq:e8}
+\end{equation}
+
+
+\noindent \textbf{Step 5.} Normalize the weighted sums of negative and positive distances using equations (\ref{eq:e9}) and (\ref{eq:e10}).
+
+\begin{equation}
+N S N_{i}=1-\frac{S N_{i}}{\max _{i}\left(S N_{i}\right)}
+\label{eq:e9}
+\end{equation}
+
+\begin{equation}
+N S P_{i}=\frac{S P_{i}}{\max _{i}\left(S P_{i}\right)}
+\label{eq:e10}
+\end{equation}
+
+\noindent \textbf{Step 6.} Calculate the evaluation score ($AS$) for each alternative using the formula (\ref{eq:e11}). A higher point value determines a higher ranking alternative.
+
+\begin{equation}
+A S_{i}=\frac{1}{2}\left(N S P_{i}+N S N_{i}\right)
+\label{eq:e11}
+\end{equation}

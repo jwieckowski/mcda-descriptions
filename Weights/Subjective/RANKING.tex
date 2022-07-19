@@ -1,0 +1,36 @@
+The Ranking method is the simplest approach for assigning weights to criteria \cite{odu2019weighting}. Factors considered in problem are ranked in order from most important to least important, assigning the lowest value to the most significant criterion \cite{roszkowska2013rank}. It also requires the minimal information from the expert, making it the easiest to handle conceptually and intuitive. Once, the criteria ranking is established, there are three possible approaches to calculate weights: \\
+
+\noindent \textbf{1. Sum} \\
+
+The rank position is weighted and then normalized by the sum of all weights as follows (\ref{eq:r1}):
+
+\begin{equation}
+    W_i = \frac{n - \alpha_i + 1}{\sum^{n}_{i=1}\alpha_i}
+\label{eq:r1}
+\end{equation}
+
+where $n$ is the number of criteria, and $\alpha_i$ is the position in ranking for the $i-th$ criterion. \\
+
+\noindent \textbf{2. Reciprocal} \\
+
+Rank reciprocal weights are derived from the normalization of the criteria rank reciprocals and can be calculated from (\ref{eq:r2}):
+
+\begin{equation}
+    W_i = \frac{\frac{1}{\alpha_i}}{\sum^{n}_{i=1} \frac{1}{\alpha_i}}
+\label{eq:r2}
+\end{equation}
+
+where $n$ is the number of criteria, and $\alpha_i$ is the position in ranking for the $i-th$ criterion. \\
+
+\noindent \textbf{3. Exponent} \\
+
+The exponent rank weights can be calculated based on the following formula (\ref{eq:e3}):
+
+\begin{equation}
+    W_i = \frac{(n - \alpha_i + 1)^p}{\sum^{n}_{i=1} (n - \alpha_i + 1)^p}
+\label{eq:r3}
+\end{equation}
+
+where $n$ is the number of criteria, $\alpha_i$ is the position in ranking for the $i-th$ criterion, and $p$ equals 2. \\
+
+This technique is attractive due to its simplicity of application. It provide an intuitive approach to weight assessments. However, it is limited by the number of criteria to be ranked. It is not an appropriate method for many criteria due to the difficulties with specifying the rank as a first step. Another problem is the necessity of choosing the particular approach of weights calculation. It can be seen, that all of presented approach would cause different weights value for the same criteria ranking. This translates into another difficulty regarding Ranking method.

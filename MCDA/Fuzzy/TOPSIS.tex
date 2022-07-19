@@ -1,0 +1,72 @@
+One of the most popular extensions of the ordinary TOPSIS method is the Fuzzy TOPSIS method \cite{salih2019survey}. Its main assumption is to use the Fuzzy Numbers to provide the uncertainty in the given problem \cite{salabun2020handling}. Triangular Fuzzy Numbers (TFNs) are among the most popular while combining fuzzy logic and multi-criteria problems \cite{nuaduaban2016fuzzy}. The main steps of the Fuzzy TOPSIS method should be shortly recalled. \\
+
+% Firstly, to simplify understanding the fuzzy logic approach, the representation of the Triangular Fuzzy Number is presented (\ref{eq:16}):
+
+% \begin{equation}
+% \mu_{\hat{A}_{1}}(x)= \Bigg\{
+%     \begin{array}{ll}
+%     (x-a) /(b-a), & a \leq x \leq b \\
+%     (d-x) /(d-b), & b \leq x \leq d \\
+%     0, & \text { otherwise }
+%     \end{array}
+% \label{eq:16}
+% \end{equation}
+
+\noindent \textbf{Step 1}. Evaluate ratings of the alternatives and of the criteria with a group of the K decision makers. The rating of the $k^{th}$ decision maker of alternative $A_{i}$ and criterion $C_{j}$ is represented as $\tilde{x}^{k}_{ij}$ = (${a}^{k}_{ij}$, ${b}^{k}_{ij}$, ${c}^{k}_{ij}$) and the weight of the criterion $C_{j}$ is presented as $\tilde{w}^{k}_{j}$ = (${w}^{k}_{j1}$, ${w}^{k}_{j2}$, ${w}^{k}_{j3}$). \\
+
+\noindent \textbf{Step 2}. Compute the aggregated fuzzy ratings for alternatives $\tilde{x}_{ij}$ = ($a_{ij}$, $b_{ij}$, $c_{ij}$) (\ref{eq:ft2}) and aggregated fuzzy weights for criteria $\tilde{w}_{j}$ = ($w_{j1}$, $w_{j2}$, $w_{j3}$) (\ref{eq:ft3}):
+
+\begin{equation}
+a_{i j}=\min _{k}\left\{a_{i j}^{k}\right\}, b_{i j}=\frac{1}{K} \sum_{k=1}^{K} b_{i j}^{k}, c_{i j}=\max _{k}\left\{c_{i j}^{k}\right\}
+\label{eq:ft2}
+\end{equation}
+
+\begin{equation}
+w_{j 1}=\min _{k}\left\{w_{j 1}^{k}\right\}, w_{j 2}=\frac{1}{K} \sum_{k=1}^{K} w_{j 2}^{k}, w_{j 3}=\max _{k}\left\{w_{j 3}^{k}\right\}
+\label{eq:ft3}
+\end{equation}
+
+\noindent \textbf{Step 3}. Calculate the normalized fuzzy decision matrix as follows (\ref{eq:ft4}):
+
+\begin{equation}
+\begin{array}{l}
+\tilde{r}_{i j}=\left(\frac{a_{i j}}{c_{j}^{*}}, \frac{b_{i j}}{c_{j}^{*}}, \frac{c_{i j}}{c_{j}^{*}}\right) \quad and \quad c_{j}^{*}=\max _{i}\left\{c_{i j}\right\} \quad benefit \\
+\tilde{r}_{i j}=\left(\frac{a_{j}^{-}}{c_{i j}}, \frac{a_{j}^{-}}{b_{i j}}, \frac{a_{j}^{-}}{a_{i j}}\right) \quad and  \quad c_{j}^{-}=\min _{i}\left\{a_{i j}\right\} \quad cost
+\end{array}
+\label{eq:ft4}
+\end{equation}
+
+\noindent \textbf{Step 4}. Calculate the weighted normalized fuzzy decision matrix with the formula given below (\ref{eq:ft5}):
+
+\begin{equation}
+    \tilde{V}=\left(\tilde{v}_{i j}\right), \text { where } \tilde{v}_{i j}=\hat{r}_{i j} \times w_{j}
+\label{eq:ft5}
+\end{equation}
+
+\noindent \textbf{Step 5}. Compute the Fuzzy Positive Ideal Solution (FPIS) (\ref{eq:ft6}) and Fuzzy Negative Ideal Solution (FNIS) (\ref{eq:ft7}):
+
+\begin{equation}
+A^{*}=\left(\hat{v}_{1}^{*}, \hat{v}_{2}^{*}, \cdots, v_{n}^{*}\right), \text { where } \hat{v}_{j}^{*}=\max _{i}\left\{v_{i j}\right\}
+\label{eq:ft6}
+\end{equation}
+
+\begin{equation}
+A^{-}=\left(\bar{v}_{1}^{-}, \tilde{v}_{2}, \cdots, \hat{v}_{n}\right), \text { where } \hat{v}_{j}=\min _{i}\left\{v_{i j 1}\right\}
+\label{eq:ft7}
+\end{equation}
+
+\noindent \textbf{Step 6}. Calculate the distance from each alternative to the FPIS and FNIS as follows (\ref{eq:ft8}):
+
+\begin{equation}
+d_{i}^{*}=\sum_{j=1}^{n} d\left(\tilde{v}_{i j}, \hat{v}_{j}^{*}\right), d_{i}^{-}=\sum_{j=1}^{n} d\left(\bar{v}_{i j}, \bar{v}_{j}^{-}\right)
+\label{eq:ft8}
+\end{equation}
+
+\noindent \textbf{Step 7}. Calculate the closeness coefficient $CC_{i}$ for each alternative (\ref{eq:ft9}):
+
+\begin{equation}
+C C_{i}=\frac{d_{i}^{-}}{d_{i}^{-}+d_{i}^{*}}
+\label{eq:ft9}
+\end{equation}
+
+\noindent \textbf{Step 8}. Generate the rank of the alternatives based on the obtained preferences, where the highest CC value represents the best alternative.

@@ -1,0 +1,53 @@
+The Characteristic Objects Method method stands out from other MCDA methods in that it is completely free of ranking reversal phenomenon \cite{salabun2019comet}. It allows for creating a multi-criteria decision analysis model, which will serve unequivocal results regardless of the number of alternatives used in the system \cite{kizielewicz2021new}. This method is more and more willingly used to solve multi-criteria problems, and its effectiveness has already been confirmed many times \cite{faizi2017group,salabun2018decision}. What is more, it is worth to introduce basic assumptions that accompany the work of this method.
+
+\textbf{Step 1.} {Define the Space of the Problem} -- the expert determines the dimensionality of the problem by selecting the number $r$ of criteria, $C_1, C_2, ..., C_r$. Then, the set of fuzzy numbers for each criterion $C_i$ is selected (\ref{eq:eq7}):
+\begin{equation}
+\begin{array}{l}
+C_r = \{\tilde{C}_{r1}, \tilde{C}_{r2}, ..., \tilde{C}_{rc_r}\}
+\end{array}
+\label{eq:eq7}
+\end{equation}
+where $c_1,c_2,...,c_r$ are numbers of the fuzzy numbers for all criteria. \\
+
+\textbf{Step 2.} {Generate Characteristic Objects} --
+The characteristic objects ($CO$) are obtained by using the Cartesian Product of fuzzy numbers cores for each criteria as follows (\ref{eq:eq8}):
+\begin{equation}
+\begin{array}{l}
+CO = C(C_1) \times C(C_2) \times ... \times C(C_r)
+\end{array}
+\label{eq:eq8}
+\end{equation}
+
+\textbf{Step 3.} {Rank the Characteristic Objects} -- the expert determines the Matrix of Expert Judgment ($MEJ$). It is a result of pairwise comparison of the COs by the problem expert. The $MEJ$ matrix contains results of comparing characteristic objects by the expert, where $\alpha_{ij}$ is the result of comparing $CO_i$ and $CO_j$ by the expert. The function $f_{exp}$ denotes the mental function of the expert. It depends solely on the knowledge of the expert and can be presented as (\ref{eq:eq12}). Afterwards, the vertical vector of the Summed Judgments ($SJ$) is obtained as follows (\ref{eq:eq16}).
+
+\begin{equation}
+\alpha_{ij} = \left\{ \begin{array}{ll}
+0.0 , & f_{exp}(CO_i)<f_{exp}(CO_j)\\
+0.5 , & f_{exp}(CO_i)=f_{exp}(CO_j)\\
+1.0 , & f_{exp}(CO_i)>f_{exp}(CO_j)
+\end{array} \right.
+\label{eq:eq12}
+\end{equation}
+
+
+\begin{equation}
+\begin{array}{l}
+SJ_i=\sum^{t}_{j=1}\alpha_{ij}
+\end{array}
+\label{eq:eq16}
+\end{equation}
+Finally, values of preference are approximated for each characteristic object. As a result, the vertical vector $P$ is obtained, where $i-th$ row contains the approximate  value of preference for $CO_i$. \\
+
+\textbf{Step 4.} {The Rule Base} --
+each characteristic object and value of preference is converted to a fuzzy rule as follows (\ref{eq:eq18}):
+
+\begin{equation}
+\begin{array}{llllllll}
+IF & C(\tilde{C}_{1i}) & AND & C(\tilde{C}_{2i}) & AND & ... & THEN & P_i
+\end{array}
+\label{eq:eq18}
+\end{equation}
+In this way, the complete fuzzy rule base is obtained. \\
+
+\textbf{Step 5.} {Inference and Final Ranking} --
+each alternative is presented as a set of crisp numbers (e.g., $A_i=\{a_{1i}, a_{2i}, ..., a_{ri}\}$). This set corresponds to criteria $C_1, C_2, ..., C_r$. Mamdani's fuzzy inference method is used to compute preference of $i-th$ alternative. The rule base guarantees that the obtained results are unequivocal. The bijection makes the COMET a completely rank reversal free.

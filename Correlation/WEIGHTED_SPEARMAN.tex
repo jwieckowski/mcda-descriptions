@@ -1,0 +1,10 @@
+The Weighted Spearman correlation coefficient allows comparing two vectors \cite{kizielewicz2020identification}. It is using the weights for determining the importance of differences occurring \cite{costa2011weighted,kizielewicz2021study}. The formula for mentioned coefficient is presented below (\ref{eq:wsp}):
+
+\begin{equation}
+\begin{array}{lcl}
+r_{w}=1-\frac{6 \cdot \sum (x_{i} - y_{i})^{2}((n - x_{i}+1)+(n-y_{i}+1))}{n \cdot\left(n^{3} + n^{2} - n -1\right)}
+\end{array}
+\label{eq:wsp}
+\end{equation}
+
+where $x_i$ means position in the reference ranking, $y-i$ is the position in the second ranking and N is a number of ranked elements.

@@ -1,0 +1,49 @@
+One of the most eagerly used extensions of the crisp TOPSIS method is the Interval TOPSIS \cite{palczewski2019fuzzy}. It is based on interval arithmetic \cite{giove2002interval}. The main advantage of this method is the possibility to perform evaluations in an uncertain environment. Moreover, its effectiveness was examined many times in various fields. Therefore, the subsequent steps of the method should be shortly recalled.
+
+\noindent \textbf{Step 1.} The calculation of the interval lower ($r^L$) and upper ($r^U$) bounds is performed based on formula presented below (\ref{eq:6}).
+
+\begin{equation}
+\begin{array}{lcl}
+r_{i j}^{L}=\frac{x_{i j}^{L}}{\left(\sum_{k=1}^{m}\left(\left(x_{k j}^{L}\right)^{2}+\left(x_{k j}^{U}\right)^{2}\right)\right)^{\frac{1}{2}}}, \quad i=1, \ldots, m, j=1, \ldots, n \\
+r_{i j}^{U}=\frac{x_{i j}^{U}}{\left(\sum_{k=1}^{m}\left(\left(x_{k j}^{L}\right)^{2}+\left(x_{k j}^{U}\right)^{2}\right)\right)^{\frac{1}{2}},} \quad i=1, \ldots, m_{i}, j=1, \ldots, n
+\end{array}
+\label{eq:6}
+\end{equation}
+
+\noindent \textbf{Step 2.}  The next step is to calculate the weighted values for each interval value (\ref{eq:7}):
+
+\begin{equation}
+\begin{array}{lcl}
+\nu_{i j}^{L}=w_{j} \times r_{i j}^{L}, \quad \nu_{i j}^{U}=w_{j} \times r_{i j}^{U}, \quad i=1, \ldots, m ; j=1, \ldots, n
+\end{array}
+\label{eq:7}
+\end{equation}
+
+\noindent \textbf{Step 3.}  Subsequently, the next step is to determine a positive and negative value for the ideal solution as follows (\ref{eq:8}):
+
+\begin{equation}
+\begin{array}{lcl}
+A^{+} &=\left\{v_{1}^{+}, v_{2}^{+}, \ldots, v_{n}^{+}\right\} =\left\{\left(\max _{i} v_{i j}^{U} | j \in K_{b}\right),\left(\min _{i} v_{i j}^{L} | j \in K_{c}\right)\right\} \\
+A^{-} &=\left\{v_{1}^{-}, v_{2}^{-}, \ldots, v_{n}^{-}\right\} =\left\{\left(\min _{i} v_{i j}^{L} | j_{i} \in K_{b}\right),\left(\max _{i} v_{i j}^{U} | j \in K_{c}\right)\right\}
+\end{array}
+\label{eq:8}
+\end{equation}
+
+\noindent \textbf{Step 4.} The calculation of the distance from the ideal solution is described as (\ref{eq:9}):
+
+\begin{equation}
+\begin{array}{lcl}
+S_{i}^{+}=\left\{\sum_{j \in K_{b}}\left(v_{ij}^{L}-v_{j}^{+}\right)^{2}+\sum_{j \in K_{c}}\left(v_{i j}^{U}-v_{j}^{+}\right)^{2}\right\}^{\frac{1}{2}}, \quad i=1, \ldots, m \\
+S_{i}^{-}=\left\{\sum_{j \in K_{b}}\left(v_{i j}^{U}-v_{j}^{-}\right)^{2}+\sum_{j \in K_{c}}\left(v_{i j}^{L}-v_{j}^{-}\right)^{2}\right\}^{\frac{1}{2}}, \quad i=1, \ldots, m
+\end{array}
+\label{eq:9}
+\end{equation}
+
+\noindent \textbf{Step 5.} The final ranking and preferences of the alternatives are determined by (\ref{eq:10}):
+
+\begin{equation}
+\begin{array}{lcl}
+R C_{i}=\frac{S_{i}^{-}}{S_{i}^{+}+S_{i}^{-}}, \quad i=1,2, \ldots, m, 0 \leqslant R C_{i} \leqslant 1
+\end{array}
+\label{eq:10}
+\end{equation}

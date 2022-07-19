@@ -1,0 +1,49 @@
+The Analytical Hierarchy Process is one of the most popular method when handling the multi-criteria decision problems \cite{de2015criteria}. Its main assumption is to define the relations between the criteria, based on which, the criteria vector weight is calculated \cite{dewi2021decision}. Then, the determined weights are used to obtain the preference values for alternatives \cite{mathew2020novel}. This method was eagerly used in many multi-criteria problems, concerning the issues of medical treatments \cite{wang2020isa} or sustainable development \cite{suganthi2018multi}.
+
+On the contrary to the methods popularity, its application is time-consuming, especially in the problems with significant complexity \cite{ccalik2019integrated}. The pairs comparison could lead to incoherent criteria relationship, which then could translates into exceed the threshold of the consistency ratio \cite{astanti2020raw}. Furthermore, it usage could cause a noticeable difficulties for the expert, which is not fulfilling the assumption of the subjective methods being intuitive and simple. For better understanding, the main steps of the AHP method should be shortly recalled \cite{goswami2020selecting}. In case of the defining the weights vector for given criteria, only first four steps should be used. \\
+
+\noindent \textbf{Step 1. Organizing problem hierarchically.} \\
+
+To simplify the expert role in assessing the alternatives, the problem should be structured as a tree. The main goal of the decision-making problem is places at the highest level of the tree. Then, next levels contain the criteria and sub-criteria, while the last level includes the alternatives for the determined problem. \\
+
+\noindent\textbf{Step 2. Development of judgment matrices by pairwise comparisons.} \\
+
+Next stage covers the pairwise comparison made by expert do obtain the relations between the criteria. During the process, each criterion is compared with others, while expert assigns particular relation describing the relevance of criteria regard to the other one. The most popular way to visualize the importance of the criteria with regard to the compared one is to use the linguistic values to provide a more friendly manner of handling the comparisons. For this, the Saaty scale is frequently used \cite{zhou2019attracts}. Proposed linguistic values are presented in Table \ref{tab:lv}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{cl}
+    \hline
+        Value & Linguistic term \\ \hline
+        1 & $C_{i}$ is equal with $C_{j}$ \\
+        2 & $C_{i}$ is between $1$ and $3$\\
+        3 & $C_{i}$ is weakly preferred with $C_{j}$\\
+        4 & $C_{i}$ is between $3$ and $5$\\
+        5 & $C_{i}$ is preferred than $C_{j}$\\
+        6 & $C_{i}$ is between $5$ $7$\\
+        7 & $C_{i}$ is strongly preferred than $C_{j}$\\
+        8 & $C_{i}$ is between $7$ and $9$\\
+        9 & $C_{i}$ is extremely preferred than $C_{j}$\\ \hline
+    \end{tabular}
+    \caption{Linguistic values describing the relations of criteria.}
+    \label{tab:lv}
+\end{table}
+
+\noindent \textbf{Step 3. Consistency check.} \\
+
+After defining all the relations for criteria, the consistency index (CI) should be calculated. The eigenvalue $\lambda_{\max}$ is used for this. The CI for expert comparisons should be calculated with the formula given below (\ref{eq:ci}):
+
+\begin{equation}
+C I=\frac{\lambda_{\max }-n}{n-1}
+\label{eq:ci}
+\end{equation}
+
+where n is a size of the criteria set. Judgment consistency can be checked by using the consistency ratio (CR). The CR is acceptable, if it does not exceed the value $0.10$. In other case, the judgment matrix should be concerned as inconsistent. If the described phenomenon appears, the pairwise comparisons should be reviewed and improved. \\
+
+\noindent \textbf{Step 4. Calculating local priorities from judgment matrices.} \\
+
+Several methods for deriving local priorities from judgment matrices have been developed. The eigenvector method (EVM), the logarithmic least squares method (LLSM) and the weighted least squares method (WLSM). Each of them differ, giving the slightly different results. The choice of the particular method should be matched for the given problem. \\
+
+\noindent \textbf{Step 5. Alternatives ranking.} \\
+
+The final step is to receive the global priorities by aggregating all local priorities with the application of a simple weighted sum. Then, the final ranking of the alternatives is defined based on the previously calculated global priorities. \\

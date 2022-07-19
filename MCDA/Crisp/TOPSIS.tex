@@ -1,0 +1,74 @@
+The Technique for Order Preference by Similarity to an Ideal Solution method was developed in 1992 by Chen and Hwang \citep{behzadian2012state}. This technique determines the distance to the Ideal Solution (IS) for each decision variant. Based on IS, the preference of alternatives is being calculated \citep{zyoud2017bibliometric}. To present the formal notation of the method, main steps should be introduced \cite{papathanasiou2018topsis}. \\
+
+\noindent \textbf{Step 1}. Determination of the decision matrix in the multi-criteria problem (\ref{cmatrix}):
+
+\begin{equation}
+\mathbf{X}=\left[\begin{array}{cccccc}
+x_{11} & x_{12} & \cdots & x_{1 j} & \cdots & x_{1 m} \\
+x_{21} & x_{22} & \cdots & x_{2 j} & \cdots & x_{2 m} \\
+\vdots & \vdots & \cdots & \vdots & \cdots & \vdots \\
+x_{i 1} & x_{i 2} & \cdots & x_{i j} & \cdots & x_{i m} \\
+\vdots & \vdots & \cdots & \vdots & \cdots & \vdots \\
+x_{n 1} & x_{n 2} & \cdots & x_{n j} & \cdots & x_{n m}
+\end{array}\right]
+\label{cmatrix}
+\end{equation}
+
+\noindent \textbf{Step 2}. Normalization of the defined decision matrix $X$ (\ref{equ:1}):
+
+% \begin{equation}
+% \begin{array}{lcl}
+% r_{i j} = \frac{f_{i j}}{\sqrt{\sum_{j=1}^{J} f_{i j}^{2}}} \quad
+% i=1, \ldots, n \quad j=1, \ldots, J
+% \end{array}
+% \label{eq:1}
+% \end{equation}
+
+\begin{equation}
+\begin{array}{llll}
+\textbf{Profit:} & r_{i j}=\frac{x_{i j}-\min _{j}\left(x_{i j}\right)}{\max _{j}\left(x_{i j}\right)-\min _{j}\left(x_{i j}\right)} & \textbf{Cost:} & r_{i j}=\frac{\max x_{j}\left(x_{i j}\right)-x_{i j}}{\max x_{j}\left(x_{i j}\right)-\min _{j}\left(x_{i j}\right)} \\
+\\
+\multicolumn{4}{c}{i=1, \ldots, m \quad j=1, \ldots, n}
+\end{array}
+\label{equ:1}
+\end{equation}
+
+\noindent \textbf{Step 3}. Calculation of a weighted normalized decision matrix (\ref{equ:2}):
+
+\begin{equation}
+\begin{array}{lcl}
+v_{i j}=w_{i} \cdot r_{i j}, \quad i=1, \ldots, m \quad j=1, \ldots, n
+\end{array}
+\label{equ:2}
+\end{equation}
+
+\noindent \textbf{Step 4}. Identification of the Positive and Negative Ideal Solutions for a defined decision-making problem (\ref{equ:3}):
+
+\begin{equation}
+\begin{array}{lcl}
+A_{i}^{*} &=\left\{v_{1}^{*}, \ldots, v_{n}^{*}\right\} =\left\{\left(\max _{j} v_{i j} \quad | \quad i \in I^{P}\right),\left(\min _{j} v_{i j} \quad | \quad i \in I^{C}\right)\right\} \\
+A_{i}^{-} &=\left\{v_{1}^{-}, \ldots, v_{n}^{-}\right\} =\left\{\left(\min _{j} v_{i j} \quad | \quad i \in I^{P}\right),\left(\max _{j} v_{i j} \quad | \quad i \in I^{C}\right)\right\}
+\end{array}
+\label{equ:3}
+\end{equation}
+
+\noindent where $I^{P}$ stands for profit type criteria and $I^{C}$ for cost type. \\
+
+\noindent \textbf{Step 5}. Calculation of the Positive and Negative Distances using the $n$-dimensional Euclidean distance (\ref{equ:4}):
+
+\begin{equation}
+\begin{array}{lcl}
+D_{i}^{*}=\sqrt{\sum_{i=1}^{n}\left(v_{i j}-v_{i}^{*}\right)^{2}}, \quad i=1, \ldots, m \\
+D_{i}^{-}=\sqrt{\sum_{i=1}^{n}\left(v_{i j}-v_{i}^{-}\right)^{2}}, \quad i=1, \ldots, m
+\end{array}
+\label{equ:4}
+\end{equation}
+
+\noindent \textbf{Step 6}. Calculation of the relative closeness to the Ideal Solution (\ref{equ:5}):
+
+\begin{equation}
+\begin{array}{lcl}
+C_{i}^{*}=\frac{D_{i}^{-}}{\left(D_{i}^{*}+D_{i}^{-}\right)}, \quad i=1, \ldots, m
+\end{array}
+\label{equ:5}
+\end{equation}

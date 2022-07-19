@@ -1,0 +1,51 @@
+The Complex Proportional Assessment (COPRAS) method, introduced by Zavadskas \cite{bausys2015application}, assumes a direct and proportional relationship of the importance of examined decision variants \cite{yazdani2017analysis}. Technique rank the alternatives based on their relative importance \cite{kildiene2011copras}. Final ranking based on the positive and negative ideal solutions. Subsequent steps of the COPRAS method are defines as follows \cite{aghdaie2012prioritizing}. \\
+
+\noindent \textbf{Step 1.} Calculate normalized decision matrix using equation (\ref{eq:copras_sum}).
+
+\begin{equation}
+    r_{i j}=\frac{x_{i j}}{\sum_{i=1}^{m} x_{i j}}
+\label{eq:copras_sum}
+\end{equation}
+
+
+\noindent \textbf{Step 2.} Calculate difficult normalized decision matrix, which represents multiplication of the normalized decision matrix elements with the appropriate weight coefficients using equation (\ref{eq:copras_e}).
+
+\begin{equation}
+    v_{ij} = r_{ij} \cdot w_j
+\label{eq:copras_e}
+\end{equation}
+
+\noindent \textbf{Step 3.} Determine the sums of difficult normalized values which was calculated previously. Equation (\ref{eq:copras_splus}) should be used for profit criteria and equation (\ref{eq:copras_sminus}) for cost criteria.
+
+\begin{equation}
+    S_{+i}=\sum_{j=1}^{k} v_{i j}
+\label{eq:copras_splus}
+\end{equation}
+
+\begin{equation}
+    S_{-i}=\sum_{j=k+1}^{n} v_{i j}
+\label{eq:copras_sminus}
+\end{equation}
+
+where $k$ is the number of attributes that must be maximized. The rest of attributes from $k+1$ to n prefer
+lower values. The $S_{+i}$ and $S_{-i}$ values show level of the goal achievement for alternatives. Higher
+value of $S_{+i}$ means that this alternative is better and the lower value of $S_{-i}$ also points to
+better alternative. \\
+
+\noindent \textbf{Step 4.} Calculate the relative significance of alternatives using equation (\ref{eq:copras_q}).
+
+\begin{equation}
+    \label{eq:copras_q}
+    Q_{i}=S_{+i}+\frac{S_{-\min } \cdot \sum_{i=1}^{m} S_{-i}}{S_{-i} \cdot \sum_{i=1}^{m}\left(\frac{S_{-\min }}{S_{-i}}\right)}
+\label{eq:copras_q}
+\end{equation}
+
+\noindent \textbf{Step 5.} Final ranking is performed according $U_i$ values (\ref{eq:copras_u}).
+
+\begin{equation}
+    U_i = \frac{Q_i}{Q^{max}_i} \cdot 100\%
+\end{equation}
+\label{eq:copras_u}
+
+where $Q^{max}_i$ stands for maximum value of the utility function. Better alternatives has higher $U_i$
+value.

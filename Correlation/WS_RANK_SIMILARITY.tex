@@ -1,0 +1,10 @@
+This similarity coefficient based on assigning a greater significance to the elements in the top part of the ranking \cite{salabun2020new}. The discrepancies in higher positions will cause a lower similarity value than same differences at the bottom of the ranking \cite{paradowski2021similarity}. The formula for calculation the WS similarity coefficient stands as follows (\ref{eq:ws}):
+
+\begin{equation}
+\begin{array}{lcl}
+WS = 1 - \sum \left ( 2^{-x_{i}} \frac{| x_{i} - y_{i} |}{\text max \{|x_{i}-1|, |x_{i}-N|\} } \right )
+\end{array}
+\label{eq:ws}
+\end{equation}
+
+where $x_i$ means position in the reference ranking, $y_i$ is the position in the second ranking and $N$ is a number of ranked elements. \\

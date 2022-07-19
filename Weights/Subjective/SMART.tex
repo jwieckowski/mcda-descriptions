@@ -1,0 +1,8 @@
+Simple Multi-Attribute Rating Technique (SMART) is originally described as the whole process of rating alternatives and weighting criteria by Von Winterfeldt and Edwards \cite{olson2004comparison}. The expert is asked to rank the importance of criteria from worst to best. The least important criteria receives a $10$ points, and an increasing number of points are assigned to the other criteria regarding their importance relatively to the least important criterion. The weights are calculated by normalizing the sum of the points to one. SMART method was a core for foundation of the new versions of this method such as SMARTER \cite{tavana2004subjective} and SMARTS \cite{haddad2014smarts}. However, the method results are sensitive for the values assigned for the particular criteria. It means that when user wants to do not use subsequent values for criteria importance, bigger disparity between those values would have direct impact on differences between weights. The SMART weights method can be calculated with (\ref{eq:smart}):
+
+\begin{equation}
+    W_i = \frac{\alpha_i}{\sum^{n}_{i=1} \alpha_i}
+\label{eq:smart}
+\end{equation}
+
+where $n$ is the number of criteria, $\alpha_i$ is the assigned to $i-th$ criterion value $\in$ [10, 11, 12, 13, 14, \ldots]. \\

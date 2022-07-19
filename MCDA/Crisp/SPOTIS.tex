@@ -1,0 +1,31 @@
+
+The Stable Preference Ordering Towards Ideal Solution (SPOTIS) method was introduced in 2020 \cite{dezert2020spotis}. It is one of a technique that proves to be resistant to rank reversal phenomenon \cite{shekhovtsov2021new}. Main assumptions of the method should be shortly recalled \cite{paradowski2021results}. \\
+
+\noindent \textbf{Step 1.} Define the bounds of the problem - min and max bounds of classical MCDM problem must be defined to transform MCDM problem form ill-defined to well-defined.
+
+\begin{equation}
+\left[S_{n}^{\min }, S_{n}^{\max }\right]=\left[x_{1}, x_{2}\right]
+\end{equation}
+
+where, $n$ - criterion number, $x_1$ - min bound, $x_2$ - max bound. \\
+
+\noindent \textbf{Step 2.} Define the ideal solution point - define vector which includes maximum or minimum from bounds for specific criterion depending on criterion type. For profit type, the max value should be taken, for cost type, min value.
+
+\begin{equation}
+S^{\star}=\left(S_{1}^{\star}, S_{2}^{\star}, S_{3}^{\star}\right)
+\end{equation}
+
+\noindent \textbf{Step 3.} Compute normalized distance matrix - for each alternative $A_{i}$ (i= 1, $\ldots$ , M),compute its normalized distance with respect to ideal solution for each criteria $C_{j}$ (j= 1, $\ldots$ , N ).
+
+\begin{equation}
+d_{i j}=\frac{\left|A_{i j}-S_{j}^{*}\right|}{\left|S_{j}^{\max }-S_{j}^{\min }\right|}
+\end{equation}
+
+\noindent \textbf{Step 4.} Compute normalized averaged distance - for each criteria $C_{j}$ (j= 1, $\ldots$ , N ) take into account its weight and calculate final preference by executing following equation.
+
+\begin{equation}
+\bar{p}_{j}=\sum_{j=1}^{N} w_{j} d_{i j}
+\end{equation}
+
+\noindent \textbf{Step 5.} Rank criteria by preference - values should be ranked in ascending order.
+

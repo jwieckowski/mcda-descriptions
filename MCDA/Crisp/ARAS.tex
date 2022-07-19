@@ -1,0 +1,50 @@
+
+Following the ARAS (Additive Ratio ASsessment) method assumptions \cite{stanujkic2015selection}, the value of the utility function, which identifies the composite relative effectiveness of a feasible alternative, is directly proportional to the relative influence of the values and weights of the main criteria considered in the project \cite{zavadskas2010new}. The ARAS method is used to evaluate decision alternatives according to the following steps \cite{ghram2019multiple}:
+
+\noindent \textbf{Step 1.} Definition of a decision matrix of dimension $n \times m$, where $n$ is the number of alternatives, and $m$ is the number of criteria (\ref{eq:e1}).
+
+\begin{equation}
+    x_{i j}=\left[\begin{array}{llll}
+    x_{11} & x_{12} & \ldots & x_{1 m} \\
+    x_{21} & x_{22} & \ldots & x_{2 m} \\
+    \ldots & \ldots & \ldots & \ldots \\
+    x_{n 1} & x_{n 2} & \ldots & x_{n m}
+    \end{array}\right]
+\label{eq:e1}
+\end{equation}
+
+\noindent \textbf{Step 2.} Normalization the decision matrix, where for profit criteria use the equation (\ref{eq:e2}), and for cost, criteria use the equation (\ref{eq:e3}). In this study, The Sum normalization method was used.
+
+\begin{equation}
+    r_{ij} = \frac{x_{ij}}{\sum_m^{i=0}x_{ij}}
+\label{eq:e2}
+\end{equation}
+
+\begin{equation}
+    r_{ij} = \frac{\frac{1}{x_{ij}}}{\sum_m^{i=0}\frac{1}{x_{ij}}}
+\label{eq:e3}
+\end{equation}
+
+\noindent \textbf{Step 3.} Building a decision matrix $v_{ij}$ subjected to a weighting and normalization process using the Equation (\ref{eq:e4}).
+
+\begin{equation}
+    v_{ij} = w_{j}r_{ij} \label{weighted}
+\label{eq:e4}
+\end{equation}
+
+\noindent \textbf{Step 4.} Determining values of optimality function using the Equation (\ref{eq:e5}).
+
+
+\begin{equation}
+    S_i = \sum_{j=1}^{n} v_{ij}
+\label{eq:e5}
+\end{equation}
+
+\noindent \textbf{Step 5.} Calculate the utility degree $K_i$ based on Equation (\ref{eq:e6}).
+
+\begin{equation}
+    K_i = \frac{S_i}{S_0}
+\label{eq:e6}
+\end{equation}
+
+where $S_i$ and $S_0$ are the optimality criterion values.
