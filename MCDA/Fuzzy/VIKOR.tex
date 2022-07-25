@@ -1,0 +1,76 @@
+The VIKOR (VIseKriterijumska Optimizacija I Kompromisno Resenje) method was first introduced in 1979 by Serafim Opricovic and later its author presented application of this method in 1980 (\cite{duckstein1980multiobjective}). It is one of the most popular method amongst researchers (\cite{rostamzadeh2015application}, \cite{opricovic2007extended}, \cite{opricovic2011fuzzy}). This method provides three distinctive rankings, namely $S$, $R$ and compromised solution $Q$. Through the years numerous extensions of this method were developed and in this research we are executing one of the most popular, fuzzy extension (\cite{opricovic2007fuzzy}). This extension adapts the VIKOR method to be able to execute in fuzzy environment where criteria that are describing alternatives have fuzzy values. The fuzzy VIKOR method is executed following the exact steps.\\
+
+\noindent \textbf{Step 1.} Determine ideal $\tilde{f}_{i}^{*} = (\tilde{a}_{i}^{*}, \tilde{b}_{i}^{*}, \tilde{c}_{i}^{*})$ and nonideal $\tilde{f}_{i}^{\circ}  = (\tilde{a}_{i}^{\circ}, \tilde{b}_{i}^{\circ}, \tilde{c}_{i}^{\circ})$ solution for each criterion. Depending on criterion type, for profit type criteria (\ref{eq:fv1}) and cost type criteria (\ref{eq:fv2}).
+
+\begin{equation}
+    \tilde{f}_{i}^{*}=M A X \tilde{f}_{i j}, \tilde{f}_{i}^{\circ}=M I N \tilde{f}_{i j}
+    \label{eq:fv1}
+\end{equation}
+
+\begin{equation}
+    \tilde{f}_{i}^{*}=M I N \tilde{f}_{i j}, \tilde{f}_{i}^{\circ}=M A X \tilde{f}_{i j}
+    \label{eq:fv2}
+\end{equation}
+
+\noindent \textbf{Step 2.} Calculate normalized fuzzy difference from ideal solution $\tilde{d}_{i j}$. Similar to previous step, the equation should match the type of criterion, for profit type (\ref{eq:fv3}) and cost type (\ref{eq:fv4}).
+
+\begin{equation}
+    \tilde{d}_{i j}=\left(\tilde{f}_{i}^{*} \Theta \tilde{f}_{i j}\right) /\left(c_{i}^{*}-a_{i}^{\circ}\right)
+    \label{eq:fv3}
+\end{equation}
+
+\begin{equation}
+     \tilde{d}_{i j}=\left(\tilde{f}_{i j} \Theta \tilde{f}_{i}^{*}\right) /\left(c_{i}^{\circ}-a_{i}^{*}\right)
+     \label{eq:fv4}
+\end{equation}
+
+\noindent \textbf{Step 3.} Compute fuzzy values of \tilde{S} and \tilde{R} by execution of fuzzy sum for \tilde{S} and fuzzy max operator for \tilde{R} as shown in equation (\ref{eq:fv5}).
+
+\begin{equation}
+\begin{aligned}
+&\tilde{S}_{j}=\sum_{i=1}^{n}{ }_{\oplus}\left(\tilde{w}_{i} \otimes \tilde{d}_{i j}\right) \\
+&\tilde{R}_{j}=\operatorname{MAX}_{i}\left(\tilde{w}_{i} \otimes \tilde{d}_{i j}\right)
+\end{aligned}
+\label{eq:fv5}
+\end{equation}
+where $\tilde{w}_{i}$ is fuzzy preference value for \textit{i-th} criterion.\\
+
+
+\noindent \textbf{Step 4.} Compute fuzzy value of $\tilde{Q}$ through equation (\ref{eq:fv6}). The $\tilde{Q}$ is a solution based on $\tilde{S}$ and $\tilde{R}$ which could be compromised by setting the value of individual regret ($1-v$) to 0.5. It is up to decision-maker to set this value and it should be set so the final $\textit{Q}$ ranking would be viable solution.
+
+\begin{equation}
+    \tilde{Q}_{j}=v\frac{\left(\tilde{S}_{j} \Theta \tilde{S}^{*}\right)}{\left(S^{\circ r}-S^{* l}\right)} \oplus \frac{(1-v)\left(\tilde{R}_{j} \Theta \tilde{R}^{*}\right)}{\left(R^{\circ r}-R^{* l}\right)}
+    \label{eq:fv6}
+\end{equation}
+where $\tilde{S}^{*}=MIN(\tilde{S}_{j})$, $S^{\circ r}=MAX(S_{j}^{r})$,\\ $\tilde{R}^{*}=MIN(\tilde{R}_{j})$, $R^{\circ r}=MAX(R_{j}^{r}$)\\
+
+\noindent \textbf{Step 5.} Defuzzify rankings $\tilde{S}$, $\tilde{R}$ and $\tilde{Q}$ with equation (\ref{eq:fv7}) and rank them in decreasing order. It should provide three distinctive rankings $S$, $R$ and $Q$.
+
+\begin{equation}
+\operatorname{Crisp}(\tilde{N})=\frac{(2 b+a+c)}{4}
+\label{eq:fv7}
+\end{equation}
+
+\noindent \textbf{Step 6.} Create "core" ranking by sorting values of $Q_{b}$ in decreasing order. The alternative rank can be set as "exact" when two conditions are satisfied, namely:\\
+\textbf{Criterion 1.}\\
+\begin{equation}
+Adv \geq DQ
+\end{equation}
+where $Adv=\frac{\left[Q\left(A^{(2)}\right)-Q\left(A^{(\mathrm{i})}\right)\right]} {\left[Q\left(A^{(\mathrm{j})}\right)-Q\left(A^{(1)}\right)\right]}$
+and $DQ = \frac{1}{(j-1)}$\\
+\textbf{Criterion 2.}\\
+The alternative $A^{(1)}$ must be the best ranked by S or/and R
+\\
+
+\noindent \textbf{Step 7.} Determine crisp trade-offs with equation (\ref{eq:fv8}). If the decision-maker does not approve calculated trade-offs, he or she can propose own values. Then, the new weights need to be calculated using equation (\ref{eq:fv9}) and continue from step 3. The Fuzzy VIKOR algorithm ends when new values are not given.
+
+\begin{equation}
+t r_{i k}=\frac{\left(D_{i} w_{k}\right)}{\left(D_{k} w_{i}\right)}
+\label{eq:fv8}
+\end{equation}
+where $D_{i}=r_{i}^{*}-l_{i}^{\circ}$ for profit type criteria, $\quad D_{i}=r_{i}^{\circ}-l_{i}^{*} \quad$ for cost type criteria
+
+\begin{equation}
+w_{k}=\left|\frac{\left(D_{k} w_{i} t r_{i k}\right)}{D_{i}}\right|
+\label{eq:fv9}
+\end{equation}

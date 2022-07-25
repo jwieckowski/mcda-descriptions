@@ -1,0 +1,66 @@
+The proposed method of RANking COMparison (RANCOM) for assessing the criteria relevance based on expert subjective knowledge and opinion requires to establish the ranking of the criteria. Similarly to Ranking method, the hierarchy of criteria importance should be defined, assigning lower values to more crucial parameters. Proposed method allows for determining criteria ranking with ties, while providing properly established weights vector, meeting the condition of vector sum equals 1. Moreover, the main factors taken into consideration were to propose the technique which:
+
+\begin{itemize}
+    \item Can be easily used by less experienced experts;
+    \item Is resistant to inconsistent definition of the relationship between criteria;
+    \item Is intuitive to use;
+    \item Is less time-consuming for complex problems;
+\end{itemize}
+
+To present a formal notation of the proposed subjective weighting method, the subsequent steps should be presented. \\
+
+\noindent \textbf{Step 1 - Define the criteria ranking}. \\
+
+The expert determines the position of the criteria regarding other factors. The designated ranking should be defined as lower values are assigned to more significant criterion. Additionally, the criteria may have equal positions in the ranking, which means that ties are allowed during the expert judgement. The criteria ranking could be defined with subsequent values (i.e [1, 2, 3, 4, 5] for five criteria) or could consist more diverse values (i. e [1, 5, 9, 12, 18] for five criteria). However, the differences occurred in ranking vector would not affect the calculated weights, unless they include different criteria hierarchy. \\
+
+
+\noindent \textbf{Step 2 - Determine the assessment function.}  \\
+
+This step requires the expert do determine the way in which criteria will be compared with each other. Assuming that lower values describe more important criteria, the assessment function could be defined as follows (\ref{eq:p1}):
+
+\begin{equation}
+    \alpha_{ij} = \left\{ \begin{array}{lccccr}
+        IF & C_{i} &  < & C_{j} & RETURN & 1  \\
+        IF & C_{i} & = & C_{j} & RETURN & 0.5 \\
+        IF & C_{i} & > &  C_{j} & RETURN & 0  \\
+    \end{array}
+    \right.
+    \label{eq:p1}
+\end{equation}
+
+The criteria relevance comparison contains three case, as presented above. The determined assessment function will be then used while establishing the matrix of ranking comparison.  \\
+
+\noindent \textbf{Step 3 - Establish the Matrix of Ranking Comparison.} \\
+
+Based on the created assessment function, the MAtrix of ranking Comparison ($MAC$) is defined (\ref{eq:mac}). It is a result of pairwise comparison of the positions from the ranking made by the expert. The $MAC$ matrix contains results of criteria relevance comparison, where $\alpha_{ij}$ is the result of comparing $C_i$ and $C_j$ with the determined function (\ref{eq:p1}).
+
+\begin{equation}
+    M A C=\left[\begin{array}{cccc}
+    \alpha_{11} & \alpha_{12} & \ldots & \alpha_{1 n} \\
+    \alpha_{21} & \alpha_{22} & \ldots & \alpha_{2 n} \\
+    \ldots & \ldots & \ldots & \ldots \\
+    \alpha_{n 1} & \alpha_{n 2} & \ldots & \alpha_{n n}
+\end{array}\right]
+\label{eq:mac}
+\end{equation}
+
+where $n$ is the number of criteria taken into account in the problem. \\
+
+
+\noindent \textbf{Step 4 - Calculate the Summed Criteria Weights.} \\
+
+Based on the obtained $MAC$, the horizontal vector of the Summed Criteria Weights ($SCW$) is obtained as follows (\ref{eq:p2}).
+
+\begin{equation}
+SCW_i=\sum^{n}_{j=1}\alpha_{ij}
+\label{eq:p2}
+\end{equation}
+
+\noindent \textbf{Step 5 - Calculate the final criteria weights.} \\
+
+Finally, values of preference are approximated for each criteria. As a result, the horizontal vector $W$ is obtained, where $i-th$ row contains the approximate value of preference for $C_i$. The weights for the set of criteria are obtained as (\ref{eq:p3}):
+
+\begin{equation}
+    W_{i} = \frac{SC_{i}}{\sum_{1}^{n} SC_{i}}
+\label{eq:p3}
+\end{equation}
