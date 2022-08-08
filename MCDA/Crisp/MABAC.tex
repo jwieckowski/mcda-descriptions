@@ -1,0 +1,78 @@
+The MABAC (Multi-Attributive Border Approximation Area Comparison) is a new method of multi-criteria decision making. The MABAC method was worked out just like MAIRCA by the research centre at the University of Defence in Belgrade. Pamučar and Ćirović first implemented this approach in 2015~\cite{mishra2021extended, pamuvcar2015selection}. It determines the distance measures between each possible alternative and the boundary approximation area (BAA)~\cite{wei2019supplier}. The fundament of the MABAC method is to determine the distance of the criterion function of each alternative from the approximation region of the boundary. The following section presents the implementation process of the MABAC method, which consists of 6 stages~\cite{pamuvcar2015selection}:
+
+\noindent \textbf{Step 1.} Define a decision matrix of dimension $n \times m$, where $n$ is the number of alternatives, and $m$ is the number of criteria (\ref{equ:mat4}).
+
+\begin{equation}
+\label{equ:mat4}
+x_{i j}=\left[\begin{array}{llll}
+x_{11} & x_{12} & \ldots & x_{1 m} \\
+x_{21} & x_{22} & \ldots & x_{2 m} \\
+\ldots & \ldots & \ldots & \ldots \\
+x_{n 1} & x_{n 2} & \ldots & x_{n m}
+\end{array}\right]
+\end{equation}
+
+
+\noindent \textbf{Step 2.} Normalization of the decision matrix, where for criteria of type profit use equation (\ref{equ:profitma}) and for criteria of type cost use equation (\ref{equ:costma}).
+
+\begin{equation}
+\label{equ:profitma}
+n_{i j}=\frac{x_{i j}- \min x_{i}}{\max x_{i}- \min x_{i}}
+\end{equation}
+
+\begin{equation}
+\label{equ:costma}
+n_{i j}=\frac{x_{i j}- \max x_{i}}{\min x_{i} - \max x_{i}}
+\end{equation}
+
+\noindent \textbf{Step 3.} Create a weighted matrix based on the values from the normalized matrix according to the formula (\ref{equ:wema}).
+
+\begin{equation}
+\label{equ:wema}
+v_{i j}=w_{i} \cdot\left(n_{i j}+1\right)
+\end{equation}
+
+
+\noindent \textbf{Step 4.} Boundary approximation area ($G$) matrix determination. The Boundary Approximation Area ($BAA$) for all criteria can be determined using the formula (\ref{equ:boundma}).
+
+
+\begin{equation}
+\label{equ:boundma}
+g_{i}=\left(\prod_{j=1}^{m} v_{i j}\right)^{1 / m}
+\end{equation}
+
+
+\noindent \textbf{Step 5.} Distance calculation of alternatives from the boundary approximation area for matrix elements ($Q$) by equation (\ref{equ:qma}).
+
+\begin{equation}
+\label{equ:qma}
+Q=\left[\begin{array}{cccc}
+v_{11}-g_{1} & v_{12}-g_{2} & \ldots & v_{1 n}-g_{n} \\
+v_{21}-g_{1} & v_{22}-g_{2} & \ldots & v_{2 n}-g_{n} \\
+\ldots & \ldots & \ldots & \ldots \\
+v_{m 1}-g_{1} & v_{m 2}-g_{2} & \ldots & v_{m n}-g_{n}
+\end{array}\right]=\left[\begin{array}{cccc}
+q_{11} & q_{12} & \ldots & q_{1 n} \\
+q_{21} & q_{22} & & q_{2 n} \\
+\ldots & \ldots & \ldots & \ldots \\
+q_{m 1} & q_{m 2} & \ldots & q_{m n}
+\end{array}\right]
+\end{equation}
+
+The membership of a given alternative $A_i$ to the approximation area ($G$, $G^{+}$ or $G^{-}$) is established by (\ref{equ:aproxma}).
+
+\begin{equation}
+\label{equ:aproxma}
+A_{i} \in\left\{\begin{array}{lll}
+G^{+} & \text {if } & q_{i j}>0 \\
+G & \text { if } & q_{i j}=0 \\
+G^{-} & \text {if } & q_{i j}<0
+\end{array}\right.
+\end{equation}
+
+\noindent \textbf{Step 6.} Ranking the alternatives according to the sum of the distances of the alternatives from the areas of approximation of the borders (\ref{equ:sima}).
+
+\begin{equation}
+\label{equ:sima}
+S_{i}=\sum_{j=1}^{n} q_{i j}, \quad j=1,2, \ldots, n, \quad i=1,2, \ldots, m
+\end{equation}
