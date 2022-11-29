@@ -1,0 +1,91 @@
+The Multi-Attribute Ideal Real Comparative Analysis (MAIRCA) method is based on calculating the equal probability for the selection of each alternative. Moreover, it uses a theoretical ponder matrix, and actual ponder matrix to determine the final preferences. The subsequent steps of the method are presented below. \\
+
+\noindent \textbf{Step 1.} Determination of the triangular fuzzy decision matrix, which contains $m$ alternatives and $n$ criteria ($i = 1, 2, \ldots, m$ and $j = 1, 2, \ldots, n$) (\ref{eq:mairca1}):
+
+\begin{equation}
+X=\left[\begin{array}{ccccc}
+x_{11} & \cdots & x_{1 j} & \cdots & x_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{i 1} & \cdots & x_{i j} & \cdots & x_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{m 1} & \cdots & x_{m j} & \cdots & x_{m m}
+\end{array}\right]
+\label{eq:mairca1}
+\end{equation}
+
+\noindent where $x_{ij}$ is represented as Triangular Fuzzy Number ($x^L, x^M, x^U$). \\
+
+\noindent \textbf{Step 2.} Determination of the alternative selection probability based on the formula (\ref{eq:mairca2}):
+
+\begin{equation}
+P_{A_{i}} = \frac{1}{m}; \quad \sum_{i=1}^{m} P_{A_{i}} = 1
+\label{eq:mairca2}
+\end{equation}
+
+\noindent \textbf{Step 3.} Calculation of the fuzzy theoretical decision matrix (\ref{eq:mairca3}):
+
+\begin{equation}
+\overline{X}=\left[\begin{array}{ccccc}
+\tilde{t}_{11} & \cdots & \tilde{t}_{1 j} & \cdots & \tilde{t}_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{t}_{i 1} & \cdots & \tilde{t}_{i j} & \cdots & \tilde{t}_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{t}_{m 1} & \cdots & \tilde{t}_{m j} & \cdots & \tilde{t}_{m m}
+\end{array}\right]
+\label{eq:mairca3}
+\end{equation}
+
+\noindent where $\tilde{t}_{ij}$ is calculated as $\frac{1}{m}w_{j}$. \\
+
+\noindent \textbf{Step 4.} Calculation of the normalized fuzzy decision matrix (\ref{eq:mairca4}):
+
+\begin{equation}
+\tilde{X}=\left[\begin{array}{ccccc}
+\tilde{x}_{11} & \cdots & \tilde{x}_{1 j} & \cdots & \tilde{x}_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{x}_{i 1} & \cdots & \tilde{x}_{i j} & \cdots & \tilde{x}_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{x}_{m 1} & \cdots & \tilde{x}_{m 1} & \cdots & \tilde{x}_{m n}
+\end{array}\right]
+\label{eq:mairca4}
+\end{equation}
+
+\noindent with the normalization formula given below (\ref{eq:mairca5}):
+
+\begin{equation}
+\begin{aligned}
+&n_{i j}^L=\frac{x_{i j}^L}{\sqrt{\sum_{i=1}^m\left[\left(x_{i j}^L\right)^2+\left(x_{i j}^M\right)^2+\left(x_{i j}^U\right)^2\right]}} \\
+&n_{i j}^M=\frac{x_{i j}^M}{\sqrt{\sum_{i=1}^m\left[\left(x_{i j}^L\right)^2+\left(x_{i j}^M\right)^2+\left(x_{i j}^U\right)^2\right]}} \\
+&n_{i j}^U=\frac{x_{i j}^U}{\sqrt{\sum_{i=1}^m\left[\left(x_{i j}^L\right)^2+\left(x_{i j}^M\right)^2+\left(x_{i j}^U\right)^2\right]}}
+\end{aligned}
+\label{eq:mairca5}
+\end{equation}
+
+\noindent \textbf{Step 5.} Calculation of the fuzzy elements of the actual ponder matrix (\ref{eq:mairca6}):
+
+\begin{equation}
+\tilde{\overline{X}}=\left[\begin{array}{ccccc}
+\tilde{\bar{t}}_{11} & \cdots & \tilde{\bar{t}}_{1 j} & \cdots & \tilde{\bar{t}}_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{\bar{t}}_{i 1} & \cdots & \tilde{\bar{t}}_{i j} & \cdots & \tilde{\bar{t}}_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{\bar{t}}_{m 1} & \cdots & \tilde{\bar{t}}_{m 1} & \cdots & \tilde{\bar{t}}_{m n}
+\end{array}\right]
+\label{eq:mairca6}
+\end{equation}
+
+\noindent where $\tilde{\bar{t}}_{ij}$ is calculated as $\tilde{x}_{i j} \times \tilde{t}_{i j}$. \\
+
+\noindent \textbf{Step 6.} Calculation of the fuzzy elements of the actual ponder matrix (\ref{eq:mairca7}):
+
+\begin{equation}
+G_{i j}=\sqrt{\frac{1}{3}\left[\left(\tilde{t}_{i j^L}-\tilde{\bar{t}}_{i j^L}\right)^2+\left(\tilde{t}_{i j^M}-\tilde{\bar{t}}_{i j^M}\right)^2+\left(\tilde{t}_{i j^U}-\tilde{\bar{t}}_{i j^U}\right)^2\right]}
+\label{eq:mairca7}
+\end{equation}
+
+\noindent \textbf{Step 7.} Determination of the final preference values (\ref{eq:mairca8}).
+
+\begin{equation}
+Q_i=\sum_{j=1}^n g_{i j}; \quad  i=1,2, \ldots, m
+\label{eq:mairca8}
+\end{equation}

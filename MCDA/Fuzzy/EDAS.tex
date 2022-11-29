@@ -1,0 +1,88 @@
+The Evaluation based on Distance from Average Solution (EDAS) method was proposed by Ghorabaee et al. Its functioning is based on the calculation of the positive distance from average (PDA) and negative distance from average (NDA). The decision variants characterized by higher PDA values and lower NDA values are preferable. The triangular fuzzy number extension of the standard EDAS method enables it to operate in the fuzzy environment where uncertain data appear. Main steps of the method should be presented.  \\
+
+\noindent \textbf{Step 1.} Determination of the triangular fuzzy decision matrix, which contains $m$ alternatives and $n$ criteria ($i = 1, 2, \ldots, m$ and $j = 1, 2, \ldots, n$) (\ref{eq:edas1}):
+
+\begin{equation}
+X=\left[\begin{array}{ccccc}
+x_{11} & \cdots & x_{1 j} & \cdots & x_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{i 1} & \cdots & x_{i j} & \cdots & x_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{m 1} & \cdots & x_{m j} & \cdots & x_{m m}
+\end{array}\right]
+\label{eq:edas1}
+\end{equation}
+
+\noindent where $x_{ij}$ is represented as Triangular Fuzzy Number ($x^L, x^M, x^U$). \\
+
+% \begin{equation}
+% w_j^*=\frac{\sum_{i=1}^m \sum_{r=1}^m\left|p_{i j}-p_{r j}\right|}{\sqrt{\sum_{j=1}^m\left[\sum_{i=1}^m \sum_{r=1}^m\left|p_{i j}-p_{r j}\right|\right]^2}}
+% \end{equation}
+
+% \begin{equation}
+% w_j^o=\frac{w_j^*}{\sum_{j=1}^m w_j^*}
+% \end{equation}
+
+\noindent \textbf{Step 2.} Determination of the average triangular fuzzy decision matrix based on the initial triangular fuzzy decision matrix and formula presented below (\ref{eq:edas2}):
+
+\begin{equation}
+\mathrm{AV}_j=\frac{\sum_{i=1}^n x_{i j}}{k}
+\label{eq:edas2}
+\end{equation}
+
+\noindent \textbf{Step 3.} Calculation of the fuzzy Positive Distance from Average (PDA) and fuzzy Negative Distance from Average (NDA) (\ref{eq:edas3}):
+
+\begin{equation}
+\begin{aligned}
+&\mathrm{PDA}=\left[\mathrm{pda}_{i j}\right]_{n \times m}
+&\mathrm{NDA}=\left[\mathrm{nda}_{i j}\right]_{n \times m}
+\end{aligned}
+\label{eq:edas3}
+\end{equation}
+
+\noindent where for profit criteria the values are calculated as (\ref{eq:edas4}):
+
+\begin{equation}
+\begin{aligned}
+& \mathrm{PDA}_{i j}=\left\{\frac{\psi\left(x_{i j}-\mathrm{AV}_j\right)}{k\left(\mathrm{AV}_j\right)}\right. & 
+& \mathrm{NDA}_{i j}=\left\{\frac{\psi\left(\mathrm{AV}_j-x_{i j}\right)}{k\left(\mathrm{AV}_j\right)}\right.
+\end{aligned}
+\label{eq:edas4}
+\end{equation}
+
+\noindent and for cost criteria, the values are computed with the formula (\ref{eq:edas5}):
+
+\begin{equation}
+\begin{aligned}
+& \mathrm{PDA}_{i j}=\left\{\frac{\psi\left(\mathrm{AV}_j\right)-x_{i j}}{k\left(\mathrm{AV}_j\right)}\right.
+& \mathrm{NDA}_{i j}=\left\{\frac{\psi\left(x_{i j}-\mathrm{AV}_j\right)}{k\left(\mathrm{AV}_j\right)}\right.
+\end{aligned}
+\label{eq:edas5}
+\end{equation}
+
+\noindent \textbf{Step 4.} Calculation of the fuzzy weighted positive (SP) and negative (SN) distances (\ref{eq:edas6}).
+
+\begin{equation}
+\begin{aligned}
+& \mathrm{SP}_i=\sum_{j=1}^m\left(\tilde{w}_j+\mathrm{PDA}_{i j}\right) 
+& \mathrm{SN}_i=\sum_{j=1}^m\left(\tilde{w}_j+\mathrm{NDA}_{i j}\right) 
+\end{aligned}
+\label{eq:edas6}
+\end{equation}
+
+\noindent \textbf{Step 5.} Determination of the normalized fuzzy weighted positive (NSP) and negative (NSN) distances (\ref{eq:edas7}).
+
+\begin{equation}
+\begin{aligned}
+& \mathrm{NSP}_i=\frac{SP_i}{\mathrm{max_i}(k(SP_i))} 
+& \mathrm{NSN}_i= 1 - \frac{SN_i}{\mathrm{max_i}(k(SN_i))} 
+\end{aligned}
+\label{eq:edas7}
+\end{equation}
+
+\noindent \textbf{Step 6.} Calculation of the fuzzy Appraisal Score (AS) for each alternative (\ref{eq:edas8}).
+
+\begin{equation}
+\mathrm{AS}_i=\frac{NSP_i+NSN_i}{2} 
+\label{eq:edas8}
+\end{equation}

@@ -1,72 +1,91 @@
-One of the most popular extensions of the ordinary TOPSIS method is the Fuzzy TOPSIS method \cite{salih2019survey}. Its main assumption is to use the Fuzzy Numbers to provide the uncertainty in the given problem \cite{salabun2020handling}. Triangular Fuzzy Numbers (TFNs) are among the most popular while combining fuzzy logic and multi-criteria problems \cite{nuaduaban2016fuzzy}. The main steps of the Fuzzy TOPSIS method should be shortly recalled. \\
+The Technique for Order Preference by Similarity to an Ideal Solution (TOPSIS) method was developed by Chen and Hwang in 1992. It is based on the distance to the Ideal Solution (IS). To extend the practical possibilities of the standard TOPSIS method, many fuzzy extensions have been introduced to this technique operation. One proposed solution is using Triangular Fuzzy Numbers to operate in an uncertain environment. To introduce the main steps of the fuzzy TOPSIS method, the main steps of the calculations should be presented. \\
 
-% Firstly, to simplify understanding the fuzzy logic approach, the representation of the Triangular Fuzzy Number is presented (\ref{eq:16}):
-
-% \begin{equation}
-% \mu_{\hat{A}_{1}}(x)= \Bigg\{
-%     \begin{array}{ll}
-%     (x-a) /(b-a), & a \leq x \leq b \\
-%     (d-x) /(d-b), & b \leq x \leq d \\
-%     0, & \text { otherwise }
-%     \end{array}
-% \label{eq:16}
-% \end{equation}
-
-\noindent \textbf{Step 1}. Evaluate ratings of the alternatives and of the criteria with a group of the K decision makers. The rating of the $k^{th}$ decision maker of alternative $A_{i}$ and criterion $C_{j}$ is represented as $\tilde{x}^{k}_{ij}$ = (${a}^{k}_{ij}$, ${b}^{k}_{ij}$, ${c}^{k}_{ij}$) and the weight of the criterion $C_{j}$ is presented as $\tilde{w}^{k}_{j}$ = (${w}^{k}_{j1}$, ${w}^{k}_{j2}$, ${w}^{k}_{j3}$). \\
-
-\noindent \textbf{Step 2}. Compute the aggregated fuzzy ratings for alternatives $\tilde{x}_{ij}$ = ($a_{ij}$, $b_{ij}$, $c_{ij}$) (\ref{eq:ft2}) and aggregated fuzzy weights for criteria $\tilde{w}_{j}$ = ($w_{j1}$, $w_{j2}$, $w_{j3}$) (\ref{eq:ft3}):
+\noindent \textbf{Step 1.} Determination of the triangular fuzzy decision matrix, which contains $m$ alternatives and $n$ criteria ($i = 1, 2, \ldots, m$ and $j = 1, 2, \ldots, n$) (\ref{eq:topsis1}):
 
 \begin{equation}
-a_{i j}=\min _{k}\left\{a_{i j}^{k}\right\}, b_{i j}=\frac{1}{K} \sum_{k=1}^{K} b_{i j}^{k}, c_{i j}=\max _{k}\left\{c_{i j}^{k}\right\}
-\label{eq:ft2}
+X=\left[\begin{array}{ccccc}
+x_{11} & \cdots & x_{1 j} & \cdots & x_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{i 1} & \cdots & x_{i j} & \cdots & x_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+x_{m 1} & \cdots & x_{m j} & \cdots & x_{m m}
+\end{array}\right]
+\label{eq:topsis1}
 \end{equation}
+
+\noindent where $x_{ij}$ is represented as Triangular Fuzzy Number ($x^L, x^M, x^U$). \\
+
+\noindent \textbf{Step 3}. Calculation of the normalized fuzzy decision matrix as follows (\ref{eq:topsis2}): 
 
 \begin{equation}
-w_{j 1}=\min _{k}\left\{w_{j 1}^{k}\right\}, w_{j 2}=\frac{1}{K} \sum_{k=1}^{K} w_{j 2}^{k}, w_{j 3}=\max _{k}\left\{w_{j 3}^{k}\right\}
-\label{eq:ft3}
+\tilde{X}=\left[\begin{array}{ccccc}
+\tilde{x}_{11} & \cdots & \tilde{x}_{1j} & \cdots & \tilde{x}_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{x}_{i 1} & \cdots & \tilde{x}_{i j} & \cdots & \tilde{x}_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\tilde{x}_{m 1} & \cdots & \tilde{x}_{m j} & \cdots & \tilde{x}_{m m}
+\end{array}\right]
+\label{eq:topsis2}
 \end{equation}
 
-\noindent \textbf{Step 3}. Calculate the normalized fuzzy decision matrix as follows (\ref{eq:ft4}):
+\noindent where for profit criteria the values are calculated as (\ref{eq:topsis3}):
 
 \begin{equation}
 \begin{array}{l}
-\tilde{r}_{i j}=\left(\frac{a_{i j}}{c_{j}^{*}}, \frac{b_{i j}}{c_{j}^{*}}, \frac{c_{i j}}{c_{j}^{*}}\right) \quad and \quad c_{j}^{*}=\max _{i}\left\{c_{i j}\right\} \quad benefit \\
-\tilde{r}_{i j}=\left(\frac{a_{j}^{-}}{c_{i j}}, \frac{a_{j}^{-}}{b_{i j}}, \frac{a_{j}^{-}}{a_{i j}}\right) \quad and  \quad c_{j}^{-}=\min _{i}\left\{a_{i j}\right\} \quad cost
+\tilde{x}_{i j}=\left(\frac{x_{i j}^L}{x_{j}^{*}}, \frac{x_{i j}^M}{x_{j}^{*}}, \frac{x_{i j}^U}{x_{j}^{*}}\right); \quad x_{j}^{*}=\max _{i}\left\{x_{i j}^U\right\}
 \end{array}
-\label{eq:ft4}
+\label{eq:topsis3}
 \end{equation}
 
-\noindent \textbf{Step 4}. Calculate the weighted normalized fuzzy decision matrix with the formula given below (\ref{eq:ft5}):
+\noindent and for cost criteria, the values are with the formula (\ref{eq:topsis4}):
 
 \begin{equation}
-    \tilde{V}=\left(\tilde{v}_{i j}\right), \text { where } \tilde{v}_{i j}=\hat{r}_{i j} \times w_{j}
-\label{eq:ft5}
+\begin{array}{l}
+\tilde{x}_{i j}=\left(\frac{x_{j}^{-}}{x_{i j}^U}, \frac{x_{j}^{-}}{x_{i j}^M}, \frac{x_{j}^{-}}{x_{i j}^L}\right); \quad x_{j}^{-}=\min _{i}\left\{x_{i j}^L\right\}
+\end{array}
+\label{eq:topsis4}
 \end{equation}
 
-\noindent \textbf{Step 5}. Compute the Fuzzy Positive Ideal Solution (FPIS) (\ref{eq:ft6}) and Fuzzy Negative Ideal Solution (FNIS) (\ref{eq:ft7}):
+\noindent \textbf{Step 4}. Calculation of the weighted normalized fuzzy decision matrix with the formula (\ref{eq:topsis5}):
 
 \begin{equation}
-A^{*}=\left(\hat{v}_{1}^{*}, \hat{v}_{2}^{*}, \cdots, v_{n}^{*}\right), \text { where } \hat{v}_{j}^{*}=\max _{i}\left\{v_{i j}\right\}
-\label{eq:ft6}
+\widetilde{\widehat{X}}=\left[\begin{array}{ccccc}
+\widetilde{\widehat{x}}_{11} & \cdots & \widetilde{\widehat{x}}_{1 j} & \cdots & \widetilde{\widehat{x}}_{1 n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\widetilde{\widehat{x}}_{i 1} & \cdots & \widetilde{\widehat{x}}_{i j} & \cdots & \widetilde{\widehat{x}}_{i n} \\
+\vdots & \ddots & \vdots & \ddots & \vdots \\
+\widetilde{\widehat{x}}_{m 1} & \cdots & \widetilde{\widehat{x}}_{m j} & \cdots & \widetilde{\widehat{x}}_{m m}
+\end{array}\right]
+\label{eq:topsis5}
+\end{equation}
+
+\noindent where $\widetilde{\widehat{x}}_{i j}=\tilde{x}_{i j} \times \widetilde{w}_j, \quad i=0,1, \ldots, m, j=1,2, \ldots, n$. \\
+
+\noindent \textbf{Step 5}. Determination of the Fuzzy Positive Ideal Solution (FPIS) (\ref{eq:topsis6}) and Fuzzy Negative Ideal Solution (FNIS) (\ref{eq:topsis7}):
+
+\begin{equation}
+A^{*}=\left(\widetilde{\widehat{x}}_{1}^{*}, \widetilde{\widehat{x}}_{2}^{*}, \cdots, \widetilde{\widehat{x}}_{n}^{*}\right); \quad \widetilde{\widehat{x}}_{j}^{*}=\max _{i}\left\{\widetilde{\widehat{x}}_{i j}\right\}
+\label{eq:topsis6}
 \end{equation}
 
 \begin{equation}
-A^{-}=\left(\bar{v}_{1}^{-}, \tilde{v}_{2}, \cdots, \hat{v}_{n}\right), \text { where } \hat{v}_{j}=\min _{i}\left\{v_{i j 1}\right\}
-\label{eq:ft7}
+A^{-}=\left(\widetilde{\widehat{x}}_{1}^{-}, \widetilde{\widehat{x}}_{2}^{-}, \cdots, \widetilde{\widehat{x}}_{n}^{-}\right); \quad  \widetilde{\widehat{x}}_{j}^{-}=\min _{i}\left\{\widetilde{\widehat{x}}_{i j}\right\}
+\label{eq:topsis7}
 \end{equation}
 
-\noindent \textbf{Step 6}. Calculate the distance from each alternative to the FPIS and FNIS as follows (\ref{eq:ft8}):
+\noindent \textbf{Step 6}. Calculation of the distance from each alternative to the FPIS and FNIS as follows (\ref{eq:topsis8}):
 
 \begin{equation}
-d_{i}^{*}=\sum_{j=1}^{n} d\left(\tilde{v}_{i j}, \hat{v}_{j}^{*}\right), d_{i}^{-}=\sum_{j=1}^{n} d\left(\bar{v}_{i j}, \bar{v}_{j}^{-}\right)
-\label{eq:ft8}
+\begin{aligned}
+& D_{i}^{*}=\sum_{j=1}^{n} d\left(\widetilde{\widehat{x}}_{i j}, \widetilde{\widehat{x}}_{j}^{*}\right) 
+& D_{i}^{-}=\sum_{j=1}^{n} d\left(\widetilde{\widehat{x}}_{i j}, \widetilde{\widehat{x}}_{j}^{-}\right)
+\end{aligned}
+\label{eq:topsis8}
 \end{equation}
 
-\noindent \textbf{Step 7}. Calculate the closeness coefficient $CC_{i}$ for each alternative (\ref{eq:ft9}):
+\noindent \textbf{Step 7}. Determination of the Closeness Coefficient $CC_{i}$ for each alternative (\ref{eq:topsis9}):
 
 \begin{equation}
-C C_{i}=\frac{d_{i}^{-}}{d_{i}^{-}+d_{i}^{*}}
-\label{eq:ft9}
+C C_{i}=\frac{D_{i}^{-}}{D_{i}^{-}+D_{i}^{*}}
+\label{eq:topsis9}
 \end{equation}
-
-\noindent \textbf{Step 8}. Generate the rank of the alternatives based on the obtained preferences, where the highest CC value represents the best alternative.
